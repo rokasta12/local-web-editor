@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.8.1/ace.js"
+    integrity="sha512-qqjLKA1tYKWxtpKReCrmE8DNYVa+/gNzzeJ6SZaTi+3J+KdTXUlS3AZtcPydvb0rXWtdwE4/KCS4RjfMGeil6g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div class="tools">
+      <button id="save-btn">Save</button>
+      <button id="switch-view">Switch View</button>
+      <select name="projects" id="my-projects">
+        <option>My projects</option>
+      </select>
+      <button id="show-project-images">Show project images</button>
+      <button class="run" id="run-button">Run </button>
+
+    </div>
+    <div>
+      <h2>Content</h2>
+      <iframe id="live-preview"></iframe>
+    </div>
+    <div class="flex-container project-images-container" id="my-project-images"></div>
+    <div class="flex-container">
+      <div class="container large-editor">
+        <h2>HTML</h2>
+        <textarea cols="30" id="html" rows="20"></textarea>
+      </div>
+      <div class="container">
+        <h2>CSS</h2>
+        <textarea cols="30" id="css" rows="20"></textarea>
+      </div>
+      <div class="container">
+        <h2>JS</h2>
+        <textarea cols="30" id="js" rows="20"></textarea>
+      </div>
+    </div>
+
+    <!-- Todo: add ace editor for more stylized view -->
+    <!-- 
+    <style>
+      #editor-js {
+        position: absolute;
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+     <div class="flex-container">
+      <div id="editor-js"></div>
+    </div> -->
+
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

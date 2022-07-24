@@ -1,0 +1,122 @@
+$dark-color: #1a1a1a;
+$purple: #646cff;
+$secondary: #20ab5a;
+$secondary-light: #64ffa5;
+
+body {
+  margin: 0;
+  display: flex;
+  min-width: 640px;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  min-height: 500px;
+  min-width: 120px;
+  width: 30%;
+  textarea {
+    width: 100%;
+  }
+}
+.flex-container {
+  min-width: 1200px;
+  display: flex;
+  gap: 20px;
+  .container {
+    width: 10%;
+    transition: width ease 0.4s;
+  }
+  .large-editor {
+    width: 80%;
+  }
+}
+iframe {
+  bottom: 0;
+  position: relative;
+  width: 100%;
+  min-width: 35em;
+  height: 35em;
+  border-radius: 10px;
+  border: 5px solid $dark-color;
+  transition: 0.5s ease all;
+  .large {
+    min-width: 55em;
+    height: 55em;
+  }
+}
+.base-button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: $dark-color;
+  cursor: pointer;
+  &hover {
+    border-color: $purple;
+  }
+  &focus,
+  &focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+}
+
+button {
+  @extend .base-button;
+  transition: border-color 0.25s;
+  &.run {
+    background-color: $secondary;
+    color: white;
+    transition: background-color 0.5s ease;
+    &:hover {
+      background-color: $secondary-light;
+      color: black;
+    }
+  }
+}
+select {
+  @extend .base-button;
+}
+
+.project-images-container {
+  white-space: nowrap;
+  overflow-y: scroll;
+  flex-direction: row;
+  width: 900px;
+  overflow-x: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  opacity: 0;
+  display: flex;
+  transition: ease all 0.6s;
+  visibility: hidden;
+  height: 0;
+  &.show {
+    height: 263px;
+    opacity: 1;
+    visibility: visible;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+  }
+  h3 {
+    font-size: 1em;
+    text-align: center;
+  }
+}
+
+.tools {
+  margin-bottom: 2em;
+}
