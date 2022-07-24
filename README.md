@@ -3,8 +3,7 @@
 
 This project is a basic code editor written in vanilla javascript.
 
-
-
+https://easywebeditor.netlify.app/
 
 
 ## Screenshots
@@ -15,7 +14,7 @@ This project is a basic code editor written in vanilla javascript.
 
 ## Demo
 
-Demo:
+Demo: https://easywebeditor.netlify.app/
 
 
 ## Installation
