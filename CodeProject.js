@@ -132,6 +132,12 @@ class CodeProject {
     this.project.img = base64Image;
     const projectToSave = this.project;
     const projects = this.getProjects();
+    if (projects.some((project) => project.name === this.project.name)) {
+      const index = projects.findIndex(
+        (project) => project.name === this.project.name
+      );
+      projects[index] = projectToSave;
+    }
     projects.push(projectToSave);
     window.localStorage.setItem(this.projectsKey, JSON.stringify(projects));
     this.getMyProjectsAddToDropdown();
@@ -148,7 +154,7 @@ class CodeProject {
 
   listenButtonClickToSave() {
     const button = document.querySelector(this.selectors.button);
-    button.addEventListener("click", this.saveProject.bind(this));
+    button.addEventListener("click", this.saveProject(this));
   }
   listenDropdownToLoad() {
     this.dropdown.addEventListener("change", (e) => {
