@@ -154,7 +154,7 @@ class CodeProject {
 
   listenButtonClickToSave() {
     const button = document.querySelector(this.selectors.button);
-    button.addEventListener("click", this.saveProject(this));
+    button.addEventListener("click", this.saveProject());
   }
   listenDropdownToLoad() {
     this.dropdown.addEventListener("change", (e) => {
