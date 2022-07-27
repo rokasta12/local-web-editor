@@ -40,7 +40,15 @@ class CodeProject {
   }
   saveProject() {
     let projectsName = prompt("What's your projects name?");
-    if (!projectsName) return;
+    if (!projectsName) {
+      alert("You should enter a name");
+      return;
+    }
+    const projects = this.getProjects();
+    if (projects.some((project) => project.name === projectsName)) {
+      alert("Project with this name already exists");
+      return;
+    }
     this.project.name = projectsName;
     this.getBase64Image();
   }
