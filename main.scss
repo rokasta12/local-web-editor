@@ -48,8 +48,8 @@ iframe {
   border-radius: 10px;
   border: 5px solid $dark-color;
   transition: 0.5s ease all;
-  .large {
-    min-width: 55em;
+  &.large {
+    min-width: 65em;
     height: 55em;
   }
 }

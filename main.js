@@ -5,7 +5,7 @@ import { DOM_SELECTORS } from "./constants";
 
 const project = new CodeProject(document.getElementById("live-preview"));
 
-const switchViewButtonElement =document.querySelector("#switch-view")
+const switchViewButtonElement = document.querySelector("#switch-view");
 const projectImagesElement = document.querySelector("#show-project-images");
 
 projectImagesElement.addEventListener("click", function () {
@@ -14,7 +14,7 @@ projectImagesElement.addEventListener("click", function () {
 });
 
 switchViewButtonElement.addEventListener("click", () => {
-  document.querySelector("iframe").style.width = "65em";
+  document.querySelector("iframe").classList.toggle("large");
 });
 
 // increase width of focused  editor.
@@ -24,7 +24,6 @@ const editorSelectorIds = Object.values(DOM_SELECTORS.editors).map(
 
 editorSelectorIds.forEach((editor) => {
   document.querySelector(`#${editor}`).addEventListener("focus", (e) => {
-    
     const minimizeOthers = (idOfFocused) => {
       editorSelectorIds.forEach((element) => {
         idOfFocused !== element
