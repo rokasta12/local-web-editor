@@ -127,11 +127,21 @@ class CodeProject {
       this.setProjectImage(imgData)
     );
   }
+  checkProjectExistsOnLocalStorage() {
+    const projects = this.getProjects();
 
+    if (projects.some((project) => project.name === this.project.name)) {
+      const index = projects.findIndex(
+        (project) => project.name === this.project.name
+      );
+      projects[index] = projectToSave;
+    }
+  }
   setProjectImage(base64Image) {
     this.project.img = base64Image;
     const projectToSave = this.project;
     const projects = this.getProjects();
+
     if (projects.some((project) => project.name === this.project.name)) {
       const index = projects.findIndex(
         (project) => project.name === this.project.name
